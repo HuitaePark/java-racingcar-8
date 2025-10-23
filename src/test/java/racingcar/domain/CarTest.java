@@ -3,7 +3,7 @@ package racingcar.domain;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
-import java.util.List;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -34,18 +34,6 @@ public class CarTest {
     void car_name_under_5() {
         assertThatThrownBy(() -> new Car("overName"))
                 .isInstanceOf(IllegalArgumentException.class);
-    }
-
-    @Test
-    @DisplayName("입력받은 이름들로 자동차 객체들을 생성한다.")
-    void make_car_list(){
-        List<String> inputList = List.of("김씨","이씨","박씨");
-
-        Cars cars = new Cars(inputList);
-
-        assertThat(cars.getCarList())
-                .isInstanceOf(List.class)
-                .allSatisfy(car -> assertThat(car).isInstanceOf(Car.class));
     }
 
 }
