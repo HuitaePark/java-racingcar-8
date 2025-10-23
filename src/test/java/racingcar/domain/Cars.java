@@ -7,6 +7,7 @@ public class Cars {
     private final List<Car> carList;
 
     public Cars(List<String> inputList) {
+        verifyDuplicationName(inputList);
         this.carList = convertFrom(inputList);
     }
 
@@ -14,9 +15,19 @@ public class Cars {
         return carList;
     }
 
-    private List<Car> convertFrom(List<String> inputList){
+    private List<Car> convertFrom(List<String> inputList) {
         return inputList.stream()
                 .map(Car::new)
                 .toList();
+    }
+
+    private void verifyDuplicationName(List<String> inputList) {
+        List<String> nameList = inputList.stream()
+                .distinct()
+                .toList();
+
+        if (inputList.size() != nameList.size()) {
+            throw new IllegalArgumentException();
+        }
     }
 }
