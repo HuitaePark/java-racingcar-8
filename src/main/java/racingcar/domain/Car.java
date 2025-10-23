@@ -13,7 +13,7 @@ public class Car {
     }
 
     public void move(int i) {
-        if(i>=4){
+        if (i >= 4) {
             this.position = position.next();
         }
     }
@@ -22,9 +22,15 @@ public class Car {
         return this.position.value();
     }
 
-    private void verifyCarName(String name){
-        if(name.length()>5){
+    @Override
+    public String toString() {
+        return name + ":" + "-".repeat(position.value());
+    }
+
+    private void verifyCarName(String name) {
+        if (name.length() > 5) {
             throw new IllegalArgumentException("자동차의 이름은 5자를 넘을수 없습니다.");
         }
     }
+
 }

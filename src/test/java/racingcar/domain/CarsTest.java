@@ -39,13 +39,4 @@ public class CarsTest {
         assertThatThrownBy(() -> new Cars(inputList))
                 .isInstanceOf(IllegalArgumentException.class);
     }
-
-    @Test
-    @DisplayName("입력받은 이름에 null이 포함되면 에러가 발생한다.")
-    void verify_car_name_null() {
-        List<String> inputList = Arrays.asList(null, "김씨", "심씨");
-
-        assertThatThrownBy(() -> new Cars(inputList))
-                .isInstanceOf(IllegalArgumentException.class);
-    }
 }

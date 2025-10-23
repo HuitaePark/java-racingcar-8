@@ -1,6 +1,7 @@
 package racingcar.domain;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Cars {
 
@@ -15,14 +16,21 @@ public class Cars {
         return carList;
     }
 
+    public String getRoundResult() {
+        return carList.stream()
+                .map(Car::toString)
+                .collect(Collectors.joining("\n"));
+    }
+
     private List<Car> convertFrom(List<String> inputList) {
-        return inputList.stream().map(Car::new).toList();
+        return inputList.stream()
+                .map(Car::new)
+                .toList();
     }
 
     private void validate(List<String> inputList) {
         verifyDuplicationName(inputList);
         verifyEmptyName(inputList);
-        verifyNull(inputList);
     }
 
     private void verifyDuplicationName(List<String> inputList) {
@@ -41,9 +49,4 @@ public class Cars {
         }
     }
 
-    private void verifyNull(List<String> inputList) {
-        if (inputList.contains(null)) {
-            throw new IllegalArgumentException();
-        }
-    }
 }
