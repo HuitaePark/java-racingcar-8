@@ -10,14 +10,16 @@ public class Referee {
         this.carList = cars.getCarList();
     }
 
-    public List<String> findWinners() {
-        return carList.stream()
-                .filter(car -> car.distance() == getTopPosition())
-                .map(Car::getName)
-                .toList();
+    public Winners findWinners() {
+        return new Winners(
+                carList.stream()
+                        .filter(car -> car.distance() == getTopPosition())
+                        .map(Car::getName)
+                        .toList()
+        );
     }
 
-    private int getTopPosition(){
+    private int getTopPosition() {
         return carList.stream()
                 .mapToInt(Car::distance)
                 .max()

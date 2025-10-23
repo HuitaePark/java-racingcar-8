@@ -22,9 +22,9 @@ public class RefereeTest {
         cars.moveAll(testStrategy);
 
         Referee referee = new Referee(cars);
-        List<String> winnerList = referee.findWinners();
+        String winnerList = referee.findWinners().toString();
 
-        assertThat(winnerList).containsExactlyInAnyOrder("김씨");
+        assertThat(winnerList).isEqualTo("김씨");
     }
 
     @Test
@@ -34,8 +34,8 @@ public class RefereeTest {
         cars.moveAll(new AlwaysMoveStrategy());
 
         Referee referee = new Referee(cars);
-        List<String> winnerList = referee.findWinners();
+        String winnerList = referee.findWinners().toString();
 
-        assertThat(winnerList).containsExactlyInAnyOrder("김씨","박씨","심씨");
+        assertThat(winnerList).isEqualTo("김씨,박씨,심씨");
     }
 }
