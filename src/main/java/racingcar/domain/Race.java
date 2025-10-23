@@ -6,17 +6,15 @@ import racingcar.domain.strategy.MoveStrategy;
 
 public class Race {
 
-    private final int tryCount;
     private final Cars cars;
     private final MoveStrategy strategy;
 
-    public Race(int tryCount, Cars cars, MoveStrategy strategy) {
-        this.tryCount = tryCount;
+    public Race(Cars cars, MoveStrategy strategy) {
         this.cars = cars;
         this.strategy = strategy;
     }
 
-    public List<String> playAllRounds() {
+    public List<String> playAllRounds(int tryCount) {
         return IntStream.range(0,tryCount)
                 .mapToObj(i->recordRound())
                 .toList();

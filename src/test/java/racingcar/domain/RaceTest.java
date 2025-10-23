@@ -16,9 +16,9 @@ public class RaceTest {
 
         int tryCount = 3;
 
-        Race race = new Race(tryCount, new Cars(inputList),new RandomMoveStrategy());
+        Race race = new Race(new Cars(inputList),new RandomMoveStrategy());
 
-        assertThat(race.playAllRounds())
+        assertThat(race.playAllRounds(3))
                 .hasSize(tryCount);
     }
 }
