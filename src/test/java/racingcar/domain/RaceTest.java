@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import racingcar.domain.strategy.RandomMoveStrategy;
 
 public class RaceTest {
 
@@ -15,7 +16,7 @@ public class RaceTest {
 
         int tryCount = 3;
 
-        Race race = new Race(tryCount, new Cars(inputList));
+        Race race = new Race(tryCount, new Cars(inputList),new RandomMoveStrategy());
 
         assertThat(race.playAllRounds())
                 .hasSize(tryCount);

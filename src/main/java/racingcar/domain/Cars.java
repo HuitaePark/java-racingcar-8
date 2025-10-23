@@ -2,6 +2,7 @@ package racingcar.domain;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import racingcar.domain.strategy.MoveStrategy;
 
 public class Cars {
 
@@ -14,6 +15,10 @@ public class Cars {
 
     public List<Car> getCarList() {
         return carList;
+    }
+
+    public void moveAll(MoveStrategy strategy) {
+        carList.forEach(car -> car.move(strategy));
     }
 
     public String getRoundResult() {

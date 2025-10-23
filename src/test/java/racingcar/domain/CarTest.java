@@ -6,6 +6,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import racingcar.domain.strategy.AlwaysMoveStrategy;
+import racingcar.domain.strategy.NeverMoveStrategy;
 
 public class CarTest {
 
@@ -14,7 +16,7 @@ public class CarTest {
     void car_move_4_amount() {
         Car car = new Car("");
 
-        car.move(4);
+        car.move(new AlwaysMoveStrategy());
 
         assertThat(car.distance()).isEqualTo(1);
     }
@@ -24,7 +26,7 @@ public class CarTest {
     void car_dont_move_under_4() {
         Car car = new Car("");
 
-        car.move(3);
+        car.move(new NeverMoveStrategy());
 
         assertThat(car.distance()).isEqualTo(0);
     }

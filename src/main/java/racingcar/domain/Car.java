@@ -1,5 +1,7 @@
 package racingcar.domain;
 
+import racingcar.domain.strategy.MoveStrategy;
+
 public class Car {
 
     private final String name;
@@ -12,8 +14,8 @@ public class Car {
         this.position = new Position(0);
     }
 
-    public void move(int i) {
-        if (i >= 4) {
+    public void move(MoveStrategy strategy) {
+        if (strategy.isMoveable()) {
             this.position = position.next();
         }
     }

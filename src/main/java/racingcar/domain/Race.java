@@ -1,17 +1,19 @@
 package racingcar.domain;
 
-import camp.nextstep.edu.missionutils.Randoms;
 import java.util.List;
 import java.util.stream.IntStream;
+import racingcar.domain.strategy.MoveStrategy;
 
 public class Race {
 
     private final int tryCount;
     private final Cars cars;
+    private final MoveStrategy strategy;
 
-    public Race(int tryCount, Cars cars) {
+    public Race(int tryCount, Cars cars, MoveStrategy strategy) {
         this.tryCount = tryCount;
         this.cars = cars;
+        this.strategy = strategy;
     }
 
     public List<String> playAllRounds() {
@@ -26,15 +28,7 @@ public class Race {
     }
 
     private void playRound() {
-        this.cars.getCarList()
-                .forEach(this::moveIfCanByRandom);
+        cars.moveAll(strategy);
     }
 
-    private void moveIfCanByRandom(Car car) {
-        car.move(pickRandomNumber());
-    }
-
-    private static int pickRandomNumber() {
-        return Randoms.pickNumberInRange(0, 9);
-    }
 }
