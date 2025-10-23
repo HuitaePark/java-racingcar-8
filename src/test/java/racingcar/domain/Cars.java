@@ -22,12 +22,14 @@ public class Cars {
     }
 
     private void verifyDuplicationName(List<String> inputList) {
-        List<String> nameList = inputList.stream()
-                .distinct()
-                .toList();
-
-        if (inputList.size() != nameList.size()) {
+        if (inputList.size() != getDistinctSize(inputList)) {
             throw new IllegalArgumentException();
         }
+    }
+
+    private int getDistinctSize(List<String> inputList) {
+        return (int) inputList.stream()
+                .distinct()
+                .count();
     }
 }
