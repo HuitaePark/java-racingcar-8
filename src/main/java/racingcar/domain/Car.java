@@ -24,7 +24,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return name + ":" + "-".repeat(position.value());
+        return name + " : " + "-".repeat(position.value());
     }
 
     private void verifyCarName(String name) {
