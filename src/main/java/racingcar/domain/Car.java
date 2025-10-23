@@ -20,6 +20,10 @@ public class Car {
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
     public int distance() {
         return this.position.value();
     }
