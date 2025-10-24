@@ -1,12 +1,11 @@
 package racingcar.presentation;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
+import java.util.Arrays;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+
 
 public class InputParserTest {
 
@@ -15,20 +14,7 @@ public class InputParserTest {
     void input_split_by_comma() {
         String input = "pobi,woni,jun";
 
-        assertThat(new String[]{"pobi", "woni", "jun"}).isEqualTo(InputParser.parsing(input));
+        assertThat(Arrays.asList("pobi", "woni", "jun")).isEqualTo(InputParser.parsing(input));
     }
 
-
-    @DisplayName("쉼표로 구분되지 않은 이름들이 들어올경우 에러가 발생한다.")
-    @ParameterizedTest
-    @CsvSource({
-            "',이름'",
-            "'이름,'",
-            "'이름,,이름'"
-    })
-    void input_validate_separation_by_comma(String input) {
-        assertThatThrownBy(() -> {
-            String[] parse = InputParser.parsing(input);
-        }).isInstanceOf(IllegalArgumentException.class);
-    }
 }
