@@ -9,6 +9,7 @@ public class InputParserTest {
 
     void input_split_by_comma(){
         String input = "pobi,woni,jun";
-        assertThat(input.split(",")).isEqualTo(InputParser.parsing(input));
+
+        assertThat(new String[]{"pobi","woni","jun"}).isEqualTo(InputParser.parsing(input));
     }
 }
