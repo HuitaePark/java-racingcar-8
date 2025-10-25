@@ -33,6 +33,15 @@ public class Cars {
                 .toList();
     }
 
+    public Winners findWinners() {
+        return new Winners(
+                carList.stream()
+                        .filter(car -> car.distance() == getTopPosition())
+                        .map(Car::getName)
+                        .toList()
+        );
+    }
+
     private void validate(List<String> inputList) {
         verifyDuplicationName(inputList);
         verifyEmptyName(inputList);
@@ -52,6 +61,13 @@ public class Cars {
         if (inputList.contains("")) {
             throw new IllegalArgumentException();
         }
+    }
+
+    private int getTopPosition() {
+        return carList.stream()
+                .mapToInt(Car::distance)
+                .max()
+                .orElse(0);
     }
 
 }

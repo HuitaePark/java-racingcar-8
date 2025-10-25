@@ -1,28 +1,16 @@
 package racingcar.domain;
 
-import java.util.List;
 
 public class Referee {
 
-    private final List<Car> carList;
+    private final Cars cars;
 
     public Referee(Cars cars) {
-        this.carList = cars.getCarList();
+        this.cars = cars;
     }
 
     public Winners findWinners() {
-        return new Winners(
-                carList.stream()
-                        .filter(car -> car.distance() == getTopPosition())
-                        .map(Car::getName)
-                        .toList()
-        );
+        return cars.findWinners();
     }
 
-    private int getTopPosition() {
-        return carList.stream()
-                .mapToInt(Car::distance)
-                .max()
-                .orElse(0);
-    }
 }
