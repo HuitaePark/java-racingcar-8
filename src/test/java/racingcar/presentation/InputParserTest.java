@@ -14,7 +14,14 @@ public class InputParserTest {
     void input_split_by_comma() {
         String input = "pobi,woni,jun";
 
-        assertThat(Arrays.asList("pobi", "woni", "jun")).isEqualTo(InputParser.parsing(input));
+        assertThat(Arrays.asList("pobi", "woni", "jun")).isEqualTo(InputParser.parseName(input));
     }
 
+    @Test
+    @DisplayName("입력값이 들어오면 시도횟수 int로 반환한다.")
+    void input_parse_int_by_input() {
+        String input = "5";
+
+        assertThat(5).isEqualTo(InputParser.parseTryCount(input));
+    }
 }

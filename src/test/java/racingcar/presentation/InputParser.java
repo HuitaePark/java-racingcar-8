@@ -10,8 +10,12 @@ public final class InputParser {
     private InputParser() {
     }
 
-    public static List<String> parsing(String input) {
+    public static List<String> parseName(String input) {
         return Arrays.asList(input.split(RACING_GAME_INPUT_DELIMITER));
+    }
+
+    public static int parseTryCount(String input){
+        return Integer.parseInt(input);
     }
 
 }
