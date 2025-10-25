@@ -14,7 +14,7 @@ public class CarTest {
     void car_move_4_amount() {
         Car car = new Car("");
 
-        car.move(()->true);
+        car.move(()->9>4);
 
         assertThat(car.distance()).isEqualTo(1);
     }
@@ -24,7 +24,7 @@ public class CarTest {
     void car_dont_move_under_4() {
         Car car = new Car("");
 
-        car.move(()->false);
+        car.move(()->3>4);
 
         assertThat(car.distance()).isEqualTo(0);
     }
