@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Queue;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import racingcar.domain.strategy.AlwaysMoveStrategy;
 import racingcar.domain.strategy.MoveStrategy;
 
 public class RefereeTest {
@@ -31,7 +30,7 @@ public class RefereeTest {
     @DisplayName("제일 많이 진행한 자동차가 여러대일 경우 여러개를 찾는다")
     void many_winning_cars() {
         Cars cars = new Cars(List.of("김씨", "박씨", "심씨"));
-        cars.moveAll(new AlwaysMoveStrategy());
+        cars.moveAll(()->true);
 
         Referee referee = new Referee(cars);
         String winnerList = referee.judgeWinners().displayNames();
