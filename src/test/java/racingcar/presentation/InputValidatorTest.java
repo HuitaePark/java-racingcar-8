@@ -47,7 +47,7 @@ public class InputValidatorTest {
             "'12a3'",
             "''"
     })
-    void input_tryCount_is_not_number(String input){
+    void input_tryCount_is_not_number(String input) {
         assertThatThrownBy(() -> InputValidator.validateCount(input))
                 .isInstanceOf(IllegalArgumentException.class);
     }
@@ -71,7 +71,7 @@ public class InputValidatorTest {
             "'1234567890123456789012345678901234567890'",
             "'999999999999999999999999999999999999999999999999'"
     })
-    void input_tryCount_is_big(String input){
+    void input_tryCount_is_big(String input) {
         assertThatThrownBy(() -> InputValidator.validateCount(input))
                 .isInstanceOf(IllegalArgumentException.class);
     }
