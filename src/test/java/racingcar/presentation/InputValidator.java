@@ -1,5 +1,7 @@
 package racingcar.presentation;
 
+import java.math.BigInteger;
+
 public final class InputValidator {
     private static final String NAME_REGEX = "^[^,]+(,\\s*[^,\\s]+)*$";
     private static final String COUNT_REGEX = "\\d+";
@@ -18,8 +20,23 @@ public final class InputValidator {
     }
 
     public static void validateCount(String input) {
+        verifyCount(input);
+        verifyNumberRange(input);
+    }
+
+    private static void verifyCount(String input){
         if(!input.matches(COUNT_REGEX)){
             throw new IllegalArgumentException("시도 횟수는 숫자를 입력하셔야 합니다.");
         }
     }
+
+    private static void verifyNumberRange(String input){
+        BigInteger value = new BigInteger(input);
+        BigInteger max = BigInteger.valueOf(Integer.MAX_VALUE);
+
+        if(value.compareTo(max) > 0){
+            throw new IllegalArgumentException("너무 많은 수는 입력할 수 없습니다.");
+        }
+    }
+
 }

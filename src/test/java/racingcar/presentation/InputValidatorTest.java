@@ -41,7 +41,11 @@ public class InputValidatorTest {
             "'四'",
             "'uno'",
             "'one'",
-            "'один'"
+            "'один'",
+            "'-1'",
+            "'5.5'",
+            "'12a3'",
+            "''"
     })
     void input_tryCount_is_not_number(String input){
         assertThatThrownBy(() -> InputValidator.validateCount(input))
@@ -58,5 +62,17 @@ public class InputValidatorTest {
     void input_tryCount_is_success(String input) {
         assertThatCode(() -> InputValidator.validateCount(input))
                 .doesNotThrowAnyException();
+    }
+
+    @DisplayName("너무 많은 경주 시도 횟수를 숫자로 입력하면 에러가 발생한다.")
+    @ParameterizedTest
+    @CsvSource({
+            "'9223372036854775808'",
+            "'1234567890123456789012345678901234567890'",
+            "'999999999999999999999999999999999999999999999999'"
+    })
+    void input_tryCount_is_big(String input){
+        assertThatThrownBy(() -> InputValidator.validateCount(input))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 }
