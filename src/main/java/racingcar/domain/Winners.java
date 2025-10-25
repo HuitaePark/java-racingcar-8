@@ -10,8 +10,7 @@ public class Winners {
         this.names = winnerList;
     }
 
-    @Override
-    public String toString() {
+    public String displayNames() {
         return String.join(",", names);
     }
 }

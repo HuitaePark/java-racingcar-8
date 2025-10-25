@@ -22,7 +22,7 @@ public class RefereeTest {
         cars.moveAll(testStrategy);
 
         Referee referee = new Referee(cars);
-        String winnerList = referee.findWinners().toString();
+        String winnerList = referee.judgeWinners().displayNames();
 
         assertThat(winnerList).isEqualTo("김씨");
     }
@@ -34,7 +34,7 @@ public class RefereeTest {
         cars.moveAll(new AlwaysMoveStrategy());
 
         Referee referee = new Referee(cars);
-        String winnerList = referee.findWinners().toString();
+        String winnerList = referee.judgeWinners().displayNames();
 
         assertThat(winnerList).isEqualTo("김씨,박씨,심씨");
     }

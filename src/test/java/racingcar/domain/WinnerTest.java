@@ -12,6 +12,6 @@ public class WinnerTest {
     void many_winning_cars() {
         Winners winners = new Winners(List.of("김씨", "박씨", "심씨"));
 
-        assertThat(winners.toString()).isEqualTo("김씨,박씨,심씨");
+        assertThat(winners.displayNames()).isEqualTo("김씨,박씨,심씨");
     }
 }

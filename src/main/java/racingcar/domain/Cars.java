@@ -33,7 +33,7 @@ public class Cars {
                 .toList();
     }
 
-    public Winners findWinners() {
+    public Winners getWinners() {
         return new Winners(
                 carList.stream()
                         .filter(car -> car.distance() == getTopPosition())

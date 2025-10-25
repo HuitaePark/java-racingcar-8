@@ -2,6 +2,7 @@ package racingcar.presentation.controller;
 
 import java.util.List;
 import racingcar.domain.RacingGame;
+import racingcar.domain.strategy.RandomMoveStrategy;
 import racingcar.presentation.ui.InputView;
 import racingcar.presentation.ui.OutputView;
 
@@ -33,7 +34,7 @@ public class RacingGameController {
     }
 
     private void printResults(RacingGame racingGame) {
-        OutputView.printGameResult(racingGame.generateResult());
+        OutputView.printGameResult(racingGame.generateResult(new RandomMoveStrategy()));
         OutputView.printGameWinners(racingGame.findWinners());
     }
 

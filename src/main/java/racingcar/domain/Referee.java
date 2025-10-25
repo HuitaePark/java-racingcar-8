@@ -9,8 +9,8 @@ public class Referee {
         this.cars = cars;
     }
 
-    public Winners findWinners() {
-        return cars.findWinners();
+    public Winners judgeWinners() {
+        return cars.getWinners();
     }
 
 }
