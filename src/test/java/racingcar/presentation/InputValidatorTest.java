@@ -33,4 +33,30 @@ public class InputValidatorTest {
                 .doesNotThrowAnyException();
     }
 
+    @DisplayName("경주 시도 횟수를 숫자로 입력하지 않으면 에러가 발생한다.")
+    @ParameterizedTest
+    @CsvSource({
+            "'1회'",
+            "'いち'",
+            "'四'",
+            "'uno'",
+            "'one'",
+            "'один'"
+    })
+    void input_tryCount_is_not_number(String input){
+        assertThatThrownBy(() -> InputValidator.validateCount(input))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @DisplayName("정상적인 시도횟수가 들어올경우 에러가 발생하지않는다.")
+    @ParameterizedTest
+    @CsvSource({
+            "1",
+            "100",
+            "'9999'"
+    })
+    void input_tryCount_is_success(String input) {
+        assertThatCode(() -> InputValidator.validateCount(input))
+                .doesNotThrowAnyException();
+    }
 }
