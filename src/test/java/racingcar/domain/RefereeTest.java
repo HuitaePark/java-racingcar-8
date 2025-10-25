@@ -11,11 +11,15 @@ import racingcar.domain.strategy.MoveStrategy;
 
 public class RefereeTest {
 
+    private static MoveStrategy sequenceOf(Boolean... moves) {
+        Queue<Boolean> queue = new LinkedList<>(List.of(moves));
+        return queue::poll;
+    }
+
     @Test
     @DisplayName("제일 많이 진행한 자동차 객체 하나를 찾는다")
     void judge_most_move_car() {
-        Queue<Boolean> sequence = new LinkedList<>(List.of(true, false, false));
-        MoveStrategy testStrategy = sequence::poll;
+        MoveStrategy testStrategy = sequenceOf(true, false, false);
 
         Cars cars = new Cars(List.of("김씨", "박씨", "심씨"));
         cars.moveAll(testStrategy);
