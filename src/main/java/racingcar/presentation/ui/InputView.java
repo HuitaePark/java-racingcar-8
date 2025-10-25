@@ -7,15 +7,19 @@ import racingcar.presentation.util.InputValidator;
 
 public class InputView {
 
-    public List<String> inputNames(){
+    public List<String> inputNames() {
         String inputText = Console.readLine();
         InputValidator.validateName(inputText);
         return InputParser.parseName(inputText);
     }
 
-    public int inputTryCount(){
+    public int inputTryCount() {
         String inputText = Console.readLine();
         InputValidator.validateCount(inputText);
         return InputParser.parseTryCount(inputText);
+    }
+
+    public void closeConsole() {
+        Console.close();
     }
 }

@@ -9,8 +9,8 @@
 - [x] 경주 시도 횟수를 입력받는다.
     - [x] ⚠️ 정상적인 숫자를 입력했는지 검증한다.
     - [x] ⚠️ 횟수가 너무 많지 않은지 검증한다.
-- [ ] 차수별 실행 결과를 출력한다.
-- [ ] 우승자(들)을 출력한다.
+- [x] 차수별 실행 결과를 출력한다.
+- [x] 우승자(들)을 출력한다.
 
 ### 기능 요구 사항
 - [x] 구분된 정보를 바탕으로 자동차 객체를 생성한다.
@@ -24,15 +24,15 @@
  
     ### 프로그래밍 요구 사항
 
-- [ ] JDK 21 버전을 사용한다.
-- [ ] Application main() 에서 프로그래밍을 시작한다.
-- [ ] build.gradle을 변경하지 않는다.
-- [ ] System.exit()를 호출하지 않는다.
-- [ ] 사용자가 입력하는 값은 camp.nextstep.edu.missionutils.Console의 readLine()을 활용한다.
-- [ ] Random 값 추출은 camp.nextstep.edu.missionutils.Randoms의 pickNumberInRange()를 활용한다.
-- [ ] Java Style Guide를 지키며 프로그래밍 한다.
-- [ ] 명시하지 않은 파일이나 패키지를 바꾸거나 이동하지 않는다.
-- [ ] indent(인덴트, 들여쓰기) depth를 3이 넘지 않도록 구현한다.
-- [ ] 3항 연산자를 쓰지 않는다.
-- [ ] 메소드가 한가지 일만 하게 만든다.
-- [ ] 테스트 코드를 작성한다.
+- [x] JDK 21 버전을 사용한다.
+- [x] Application main() 에서 프로그래밍을 시작한다.
+- [x] build.gradle을 변경하지 않는다.
+- [x] System.exit()를 호출하지 않는다.
+- [x] 사용자가 입력하는 값은 camp.nextstep.edu.missionutils.Console의 readLine()을 활용한다.
+- [x] Random 값 추출은 camp.nextstep.edu.missionutils.Randoms의 pickNumberInRange()를 활용한다.
+- [x] Java Style Guide를 지키며 프로그래밍 한다.
+- [x] 명시하지 않은 파일이나 패키지를 바꾸거나 이동하지 않는다.
+- [x] indent(인덴트, 들여쓰기) depth를 3이 넘지 않도록 구현한다.
+- [x] 3항 연산자를 쓰지 않는다.
+- [x] 메소드가 한가지 일만 하게 만든다.
+- [x] 테스트 코드를 작성한다.
