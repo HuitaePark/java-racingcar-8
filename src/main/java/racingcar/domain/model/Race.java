@@ -1,4 +1,4 @@
-package racingcar.domain;
+package racingcar.domain.model;
 
 import java.util.List;
 import java.util.stream.IntStream;

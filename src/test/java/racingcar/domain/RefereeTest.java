@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Queue;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import racingcar.domain.model.Cars;
+import racingcar.domain.model.Referee;
 import racingcar.domain.strategy.MoveStrategy;
 
 public class RefereeTest {

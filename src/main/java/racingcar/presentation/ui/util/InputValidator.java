@@ -1,4 +1,4 @@
-package racingcar.presentation.util;
+package racingcar.presentation.ui.util;
 
 import java.math.BigInteger;
 

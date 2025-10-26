@@ -5,7 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.Arrays;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import racingcar.presentation.util.InputParser;
+import racingcar.presentation.ui.util.InputParser;
 
 
 public class InputParserTest {

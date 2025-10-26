@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import racingcar.domain.model.Cars;
+import racingcar.domain.model.Race;
 import racingcar.domain.strategy.RandomMoveStrategy;
 
 public class RaceTest {

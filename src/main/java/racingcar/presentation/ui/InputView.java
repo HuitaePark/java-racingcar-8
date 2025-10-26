@@ -2,8 +2,8 @@ package racingcar.presentation.ui;
 
 import camp.nextstep.edu.missionutils.Console;
 import java.util.List;
-import racingcar.presentation.util.InputParser;
-import racingcar.presentation.util.InputValidator;
+import racingcar.presentation.ui.util.InputParser;
+import racingcar.presentation.ui.util.InputValidator;
 
 public class InputView {
 

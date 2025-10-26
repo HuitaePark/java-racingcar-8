@@ -1,4 +1,4 @@
-package racingcar.domain;
+package racingcar.domain.model;
 
 public record Position(int value) {
     public Position next() {

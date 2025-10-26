@@ -6,7 +6,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import racingcar.presentation.util.InputValidator;
+import racingcar.presentation.ui.util.InputValidator;
 
 public class InputValidatorTest {
 
