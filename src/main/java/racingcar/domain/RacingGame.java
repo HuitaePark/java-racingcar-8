@@ -14,7 +14,7 @@ public class RacingGame {
         this.cars = new Cars(userList);
     }
 
-    public String generateResult(MoveStrategy moveStrategy) {
+    public String run(MoveStrategy moveStrategy) {
         Race race = new Race(cars,moveStrategy);
         List<String> result = race.playAllRounds(tryCount);
 

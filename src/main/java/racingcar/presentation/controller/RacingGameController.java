@@ -34,7 +34,7 @@ public class RacingGameController {
     }
 
     private void printResults(RacingGame racingGame) {
-        OutputView.printGameResult(racingGame.generateResult(new RandomMoveStrategy()));
+        OutputView.printGameResult(racingGame.run(new RandomMoveStrategy()));
         OutputView.printGameWinners(racingGame.findWinners());
     }
 

@@ -19,7 +19,7 @@ class RacingGameTest {
         MoveStrategy alwaysMove = () -> true;
 
         // when
-        String result = racingGame.generateResult(alwaysMove);
+        String result = racingGame.run(alwaysMove);
 
         // then
         String[] lines = result.split("\n");
@@ -39,7 +39,7 @@ class RacingGameTest {
         MoveStrategy neverMove = () -> false;
 
         // when
-        String result = racingGame.generateResult(neverMove);
+        String result = racingGame.run(neverMove);
 
         // then
         String[] lines = result.split("\n");
@@ -57,7 +57,7 @@ class RacingGameTest {
         RacingGame racingGame = new RacingGame(1, userList);
         MoveStrategy alwaysMove = () -> true;
 
-        racingGame.generateResult(alwaysMove);
+        racingGame.run(alwaysMove);
 
         // when
         String winners = racingGame.findWinners();
