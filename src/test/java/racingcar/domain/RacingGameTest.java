@@ -22,8 +22,7 @@ class RacingGameTest {
         String result = racingGame.run(alwaysMove);
 
         // then
-        String[] lines = result.split("\n");
-        assertThat(lines).contains(
+        assertThat(result).contains(
                 "pobi : ---",
                 "crong : ---"
         );
@@ -42,8 +41,7 @@ class RacingGameTest {
         String result = racingGame.run(neverMove);
 
         // then
-        String[] lines = result.split("\n");
-        assertThat(lines).contains(
+        assertThat(result).contains(
                 "pobi : ",
                 "crong : "
         );
