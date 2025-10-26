@@ -15,12 +15,23 @@ public class RaceTest {
     @DisplayName("입력 받은 만큼 경주를 진행시킨다.")
     void make_race_session() {
         List<String> inputList = List.of("김씨", "이씨", "심씨");
-
         int tryCount = 3;
 
         Race race = new Race(new Cars(inputList),new RandomMoveStrategy());
 
         assertThat(race.playAllRounds(3))
                 .hasSize(tryCount);
+    }
+
+    @Test
+    @DisplayName("시도 횟수가 0이면 경주를 진행하지 않는다.")
+    void make_race_session_with_zero_tryCount() {
+        List<String> inputList = List.of("김씨", "이씨", "심씨");
+        int tryCount = 0;
+
+        Race race = new Race(new Cars(inputList), new RandomMoveStrategy());
+
+        assertThat(race.playAllRounds(tryCount))
+                .isEmpty();
     }
 }

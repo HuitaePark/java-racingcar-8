@@ -43,4 +43,16 @@ public class RefereeTest {
 
         assertThat(winnerList).isEqualTo("김씨,박씨,심씨");
     }
+
+    @Test
+    @DisplayName("자동차가 한 대일 경우 그 자동차를 우승자로 판단한다")
+    void single_winning_car() {
+        Cars cars = new Cars(List.of("김씨"));
+        cars.moveAll(() -> true);
+
+        Referee referee = new Referee(cars);
+        String winnerList = referee.judgeWinners().displayNames();
+
+        assertThat(winnerList).isEqualTo("김씨");
+    }
 }

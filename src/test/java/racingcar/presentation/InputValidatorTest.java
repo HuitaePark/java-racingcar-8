@@ -34,7 +34,7 @@ public class InputValidatorTest {
                 .doesNotThrowAnyException();
     }
 
-    @DisplayName("경주 시도 횟수를 숫자로 입력하지 않으면 에러가 발생한다.")
+    @DisplayName("경주 시도 횟수를 자연수로 입력하지 않으면 에러가 발생한다.")
     @ParameterizedTest
     @CsvSource({
             "'1회'",
