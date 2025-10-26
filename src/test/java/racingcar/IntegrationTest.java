@@ -23,7 +23,7 @@ public class IntegrationTest extends NsTest {
 
     @Test
     @DisplayName("횟수가 너무 많을 경우 에러 발생")
-    void toManny_number_is_error() {
+    void too_manny_number_is_error() {
         assertSimpleTest(() ->
                 assertThatThrownBy(() -> runException("막스,르끌레르,노리스,오스카", "9999999999999999999999999"))
                         .isInstanceOf(IllegalArgumentException.class)
@@ -59,6 +59,24 @@ public class IntegrationTest extends NsTest {
                 },
                 MOVING_FORWARD, MOVING_FORWARD, MOVING_FORWARD, MOVING_FORWARD, MOVING_FORWARD,
                 MOVING_FORWARD, MOVING_FORWARD, MOVING_FORWARD, MOVING_FORWARD, MOVING_FORWARD
+        );
+    }
+
+    @Test
+    @DisplayName("이름이 5자가 넘어갈 경우 에러 발생")
+    void too_long_name_is_error() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("막스 베르스타펜,샤를 르끌레르,오스카 피아스트리,랜도 노리스,알렉산더 알본", "9"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
+    @Test
+    @DisplayName("횟수가 너무 많을 경우 에러 발생")
+    void incorrect_number_is_error() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("막스,르끌레르,노리스,오스카", "두번"))
+                        .isInstanceOf(IllegalArgumentException.class)
         );
     }
 
