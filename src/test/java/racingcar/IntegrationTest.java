@@ -80,6 +80,38 @@ public class IntegrationTest extends NsTest {
         );
     }
 
+    @Test
+    @DisplayName("모든 자동차가 공동 우승하는 경우 테스트")
+    void allCarsTieForFirstPlace() {
+        assertRandomNumberInRangeTest(
+                () -> {
+                    run("pobi,woni,jun", "1");
+                    assertThat(output())
+                            .contains("pobi : -", "woni : -", "jun : -")
+                            .contains("최종 우승자 : pobi,woni,jun");
+                },
+                MOVING_FORWARD, MOVING_FORWARD, MOVING_FORWARD
+        );
+    }
+
+    @Test
+    @DisplayName("경주 횟수가 0인 경우 정상 진행")
+    void raceWithZeroRounds() {
+        assertSimpleTest(() -> {
+            run("pobi,woni", "0");
+            assertThat(output()).contains("최종 우승자 : pobi,woni");
+        });
+    }
+
+    @Test
+    @DisplayName("자동차 이름이 비어있는 경우 에러발생")
+    void emptyCarName() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("", "1"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
     @Override
     protected void runMain() {
         Application.main(new String[]{});
