@@ -9,7 +9,7 @@ public class InputView {
 
     public List<String> inputNames() {
         String inputText = Console.readLine();
-        InputValidator.validateName(inputText);
+        InputValidator.verifyNamePattern(inputText);
         return InputParser.parseName(inputText);
     }
 

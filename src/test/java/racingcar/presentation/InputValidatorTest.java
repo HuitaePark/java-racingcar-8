@@ -18,7 +18,7 @@ public class InputValidatorTest {
             "'이름,,이름'"
     })
     void input_validate_separation_by_comma(String input) {
-        assertThatThrownBy(() -> InputValidator.validateName(input))
+        assertThatThrownBy(() -> InputValidator.verifyNamePattern(input))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
@@ -30,7 +30,7 @@ public class InputValidatorTest {
             "'이름1, 이름2, 이름3'"
     })
     void input_separation_success_by_comma(String input) {
-        assertThatCode(() -> InputValidator.validateName(input))
+        assertThatCode(() -> InputValidator.verifyNamePattern(input))
                 .doesNotThrowAnyException();
     }
 
