@@ -88,7 +88,7 @@ public class IntegrationTest extends NsTest {
                     run("pobi,woni,jun", "1");
                     assertThat(output())
                             .contains("pobi : -", "woni : -", "jun : -")
-                            .contains("최종 우승자 : pobi,woni,jun");
+                            .contains("최종 우승자 : pobi, woni, jun");
                 },
                 MOVING_FORWARD, MOVING_FORWARD, MOVING_FORWARD
         );
@@ -99,7 +99,7 @@ public class IntegrationTest extends NsTest {
     void raceWithZeroRounds() {
         assertSimpleTest(() -> {
             run("pobi,woni", "0");
-            assertThat(output()).contains("최종 우승자 : pobi,woni");
+            assertThat(output()).contains("최종 우승자 : pobi, woni");
         });
     }
 

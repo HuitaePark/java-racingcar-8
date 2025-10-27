@@ -41,7 +41,7 @@ public class RefereeTest {
         Referee referee = new Referee(cars);
         String winnerList = referee.judgeWinners().displayNames();
 
-        assertThat(winnerList).isEqualTo("김씨,박씨,심씨");
+        assertThat(winnerList).isEqualTo("김씨, 박씨, 심씨");
     }
 
     @Test

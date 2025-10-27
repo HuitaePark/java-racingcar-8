@@ -62,6 +62,6 @@ class RacingGameTest {
         String winners = racingGame.findWinners();
 
         // then
-        assertThat(winners).isEqualTo("pobi,crong");
+        assertThat(winners).isEqualTo("pobi, crong");
     }
 }
