@@ -5,6 +5,7 @@ import racingcar.domain.strategy.MoveStrategy;
 
 
 public class RacingGame {
+    private static final String ROUND_SEPARATOR = "\n\n";
 
     private final Cars cars;
     private final int tryCount;
@@ -18,7 +19,7 @@ public class RacingGame {
         Race race = new Race(cars,moveStrategy);
         List<String> result = race.playAllRounds(tryCount);
 
-        return String.join("\n\n",result);
+        return String.join(ROUND_SEPARATOR,result);
     }
 
 

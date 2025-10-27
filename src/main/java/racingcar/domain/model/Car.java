@@ -3,6 +3,7 @@ package racingcar.domain.model;
 import racingcar.domain.strategy.MoveStrategy;
 
 public class Car {
+    private static final int NAME_CONVENTION = 5;
 
     private final String name;
     private Position position;
@@ -34,7 +35,7 @@ public class Car {
     }
 
     private void verifyCarName(String name) {
-        if (name.length() > 5) {
+        if (name.length() > NAME_CONVENTION) {
             throw new IllegalArgumentException("자동차의 이름은 5자를 넘을수 없습니다.");
         }
     }
