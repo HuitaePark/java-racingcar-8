@@ -34,9 +34,13 @@ public final class InputValidator {
         BigInteger value = new BigInteger(input);
         BigInteger max = BigInteger.valueOf(Integer.MAX_VALUE);
 
-        if (value.compareTo(max) > 0) {
+        if (isBiggerThanInt(value,max)) {
             throw new IllegalArgumentException("너무 많은 수는 입력할 수 없습니다.");
         }
+    }
+
+    private static boolean isBiggerThanInt(BigInteger value, BigInteger max){
+        return value.compareTo(max) > 0;
     }
 
 }
